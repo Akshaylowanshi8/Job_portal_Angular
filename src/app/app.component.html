@@ -1,0 +1,38 @@
+
+
+<div class="flex justify-between p-6 bg-white shadow-sm sticky top-0 z-10"> 
+    <nav class="flex justify-center space-x-4">
+        <a routerLink='home' class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Home</a>
+        <a routerLink='job'class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">search job</a>
+       
+       
+        <a routerLink='desh' class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Deshboard</a>
+      
+      </nav> 
+
+
+      <ng-container *ngIf="userinfo else elseTemplate">
+        <div>
+    <button>{{userinfo }}</button>
+
+          <button (click)="logout()" class=" mr-4 py-2 px-5 bg-white text-red-700 ring-1 ring-red-400 font-semibold rounded-full shadow-md hover:bg-orange-200 focus:outline-none focus:ring focus:ring-orange-700 focus:ring-opacity-75">
+            Logout
+          </button>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class=""> 
+          <button routerLink='login' class=" mr-4 py-2 px-5 bg-white text-green-500 ring-1 ring-green-400 font-semibold rounded-full shadow-md hover:bg-orange-200 focus:outline-none focus:ring focus:ring-orange-700 focus:ring-opacity-75">
+            Login
+          </button>
+          <button routerLink='registation' class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">
+            Register
+          </button>
+          </div> 
+      </ng-template>
+      
+       
+</div>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
